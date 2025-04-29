@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div class="search-bar">
+      <select id="searchType">
+        <option value="books">Livros</option>
+        <option value="sellers">Livrarias</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Buscar livros ou livrarias...">
+    </div>
+  </header>
+
+  <main>
+    <h2>Recomendações</h2>
+    <div id="bookResults" class="results"></div>
+
+    <h2>Novidades</h2>
+    <div id="newBooks" class="results"></div>
+
+    <h2>Livrarias</h2>
+    <div id="sellerResults" class="results"></div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
