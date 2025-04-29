@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Book Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cadastro-container">
+    <h2>Seu Perfil</h2>
+
+    <label>Nome</label>
+    <input type="text" id="nome" readonly onclick="enableEdit('nome')" />
+
+    <label>Username</label>
+    <input type="text" id="username" readonly onclick="enableEdit('username')" />
+
+    <label>Bio</label>
+    <input type="text" id="bio" readonly onclick="openBioPopup()" placeholder="Clique para adicionar" />
+
+    <label>Gênero Favorito</label>
+    <input type="text" id="generoFavorito" readonly onclick="openGenrePopup()" />
+
+    <label>Autor Favorito</label>
+    <input type="text" id="autorFavorito" placeholder="Digite seu autor favorito" />
+
+    <button onclick="finalizarCadastro()">Finalizar Cadastro</button>
+  </div>
+
+  <!-- Popup Bio -->
+  <div id="bioPopup" class="popup hidden">
+    <textarea id="bioText" placeholder="Digite sua bio..." oninput="liveUpdateBio()"></textarea>
+    <button onclick="confirmarBio()">Confirmar</button>
+  </div>
+
+  <!-- Popup Gênero -->
+  <div id="genrePopup" class="popup hidden">
+    <div id="genre-buttons-container" class="pyramid-layout"></div>
+    <button onclick="confirmarGenero()">Confirmar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
