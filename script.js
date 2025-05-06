@@ -27,15 +27,18 @@ function login() {
   const errorMessage = document.getElementById("error-message");
 
   errorMessage.textContent = "";
+  errorMessage.style.visibility = "hidden";
 
   if (!email || !password) {
     errorMessage.textContent = "Por favor, insira email e senha.";
+    errorMessage.style.visibility = "visible";
     return;
   }
 
   const userData = JSON.parse(localStorage.getItem("userData"));
   if (!userData || userData.email !== email || userData.senha !== password) {
     errorMessage.textContent = "Email ou senha incorretos.";
+    errorMessage.style.visibility = "visible";
     return;
   }
 
@@ -55,16 +58,22 @@ function goToCadastro() {
   window.location.href = "cadastro1.html";
 }
 
-function togglePasswordVisibility(id, icon) {
+function togglePasswordVisibility(id, iconContainer) {
   const input = document.getElementById(id);
+  const icon = iconContainer.querySelector('i');
+
+  // Toggle input type
   if (input.type === "password") {
     input.type = "text";
-    icon.textContent = "🙈";
+    icon.classList.remove("bi-eye-slash-fill");
+    icon.classList.add("bi-eye-fill");
   } else {
     input.type = "password";
-    icon.textContent = "👁️";
+    icon.classList.remove("bi-eye-fill");
+    icon.classList.add("bi-eye-slash-fill");
   }
 }
+
 
 // --- Cadastro1 Page ---
 function validateUsername() {
@@ -185,3 +194,12 @@ function handleImageUpload(event) {
     reader.readAsDataURL(file);
   }
 }
+
+
+
+
+  
+
+
+  
+
